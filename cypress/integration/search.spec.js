@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+/// <reference types='cypress' />
 
 describe('Search', () => {
   beforeEach(() => {
@@ -8,7 +8,9 @@ describe('Search', () => {
   it('For books by Douglas Adams', () => {
     cy.get('select').select('inauthor');
     cy.get('input').type('Douglas Adams{enter}');
-    
-    cy.contains('.card-title', "The Hitchhiker's Guide to the Galaxy").should('be.visible');
+
+    cy.contains('.card-title', "The Hitchhiker's Guide to the Galaxy").should(
+      'be.visible'
+    );
   });
 });
