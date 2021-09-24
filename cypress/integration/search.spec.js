@@ -37,4 +37,17 @@ describe('Search', () => {
       'be.visible'
     );
   });
+
+  it('wait for fetch()', () => {
+    cy.intercept('/books/v1/volumes?*').as('book-search');
+
+    cy.get('select').select('inauthor');
+    cy.get('input').type('Douglas Adams{enter}');
+
+    cy.wait('@book-search', { timeout: 2000 });
+
+    cy.contains('.card-title', "The Hitchhiker's Guide to the Galaxy").should(
+      'be.visible'
+    );
+  });
 });
