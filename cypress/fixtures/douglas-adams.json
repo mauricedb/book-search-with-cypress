@@ -1,0 +1,106 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 312,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "0sm1UmgHCwgC",
+      "etag": "B6S/YtjtN8k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/0sm1UmgHCwgC",
+      "volumeInfo": {
+        "title": "Book one",
+        "authors": ["Douglas Adams"],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2013-02-26",
+        "description": "From Douglas Adams, the legendary author of one of the most beloved science fiction novels of all time, The Hitchhiker’s Guide to the Galaxy, comes a wildly inventive novel of ghosts, time travel, and one detective’s mission to save humanity from extinction. DIRK GENTLY’S HOLISTIC DETECTIVE AGENCY We solve the whole crime We find the whole person Phone today for the whole solution to your problem (Missing cats and messy divorces a specialty) Douglas Adams, the “master of wacky words and even wackier tales” (Entertainment Weekly) once again boggles the mind with a completely unbelievable story of ghosts, time travel, eccentric computer geniuses, Samuel Taylor Coleridge, the end of the world, and—of course—missing cats.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781439140611"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1439140618"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 320,
+        "printType": "BOOK",
+        "categories": ["Fiction"],
+        "averageRating": 3.5,
+        "ratingsCount": 98,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "5.26.22.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=0sm1UmgHCwgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=0sm1UmgHCwgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=0sm1UmgHCwgC&pg=PP1&dq=inauthor:Douglas+Adams&hl=&as_brr=5&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=0sm1UmgHCwgC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=0sm1UmgHCwgC"
+      },
+      "searchInfo": {
+        "textSnippet": "From Douglas Adams, the legendary author of one of the most beloved science fiction novels of all time, The Hitchhiker’s Guide to the Galaxy, comes a wildly inventive novel of ghosts, time travel, and one detective’s mission to save ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "j24GMN0OtS8C",
+      "etag": "V6u7R8WpeXM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/j24GMN0OtS8C",
+      "volumeInfo": {
+        "title": "Book two",
+        "authors": ["Douglas Adams"],
+        "publisher": "Del Rey",
+        "publishedDate": "2007-12-18",
+        "description": "This beautifully illustrated edition of the New York Times bestselling classic celebrates the 42nd anniversary of the original publication—with all-new art by award-winning illustrator Chris Riddell. SOON TO BE A HULU SERIES • “An astonishing comic writer.”—Neil Gaiman Nominated as one of America’s best-loved novels by PBS’s The Great American Read It’s an ordinary Thursday morning for Arthur Dent . . . until his house gets demolished. The Earth follows shortly after to make way for a new hyperspace express route, and Arthur’s best friend has just announced that he’s an alien. After that, things get much, much worse. With just a towel, a small yellow fish, and a book, Arthur has to navigate through a very hostile universe in the company of a gang of unreliable aliens. Luckily the fish is quite good at languages. And the book is The Hitchhiker’s Guide to the Galaxy . . . which helpfully has the words DON’T PANIC inscribed in large, friendly letters on its cover. Douglas Adams’s mega-selling pop-culture classic sends logic into orbit, plays havoc with both time and physics, offers up pithy commentary on such things as ballpoint pens, potted plants, and digital watches . . . and, most important, reveals the ultimate answer to life, the universe, and everything. Now, if you could only figure out the question. . . .",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780307417138"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0307417131"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 304,
+        "printType": "BOOK",
+        "categories": ["Fiction"],
+        "averageRating": 4,
+        "ratingsCount": 3403,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.14.13.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=j24GMN0OtS8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=j24GMN0OtS8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.nl/books?id=j24GMN0OtS8C&pg=PP1&dq=inauthor:Douglas+Adams&hl=&as_brr=5&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=j24GMN0OtS8C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=j24GMN0OtS8C"
+      },
+      "searchInfo": {
+        "textSnippet": "This beautifully illustrated edition of the New York Times bestselling classic celebrates the 42nd anniversary of the original publication—with all-new art by award-winning illustrator Chris Riddell."
+      }
+    }
+  ]
+}

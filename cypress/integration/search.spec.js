@@ -50,4 +50,15 @@ describe('Search', () => {
       'be.visible'
     );
   });
+
+  it('intercept and fake the response', () => {
+    cy.intercept('/books/v1/volumes?*', { fixture: 'douglas-adams.json' }).as(
+      'book-search'
+    );
+
+    cy.get('select').select('inauthor');
+    cy.get('input').type('Douglas Adams{enter}');
+
+    cy.contains('.card-title', 'Book two').should('be.visible');
+  });
 });
