@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .presentation-buddy
+
+cypress/videos
