@@ -14,6 +14,9 @@ jobs:
     container:
       image: cypress/included:8.6.0
       options: --ipc=host
+    env:
+      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
     steps:
       - name: Checkout Code
@@ -32,7 +35,7 @@ jobs:
         run: npm install start-server-and-test --no-save
 
       - name: Run Application and Cypress E2E Tests
-        run: npx start-server-and-test start http://localhost:3000 cypress:run
+        run: npx start-server-and-test start http://localhost:3000 cypress:run --record
 
       - name: Upload Cypress Screenshots
         uses: actions/upload-artifact@v2
