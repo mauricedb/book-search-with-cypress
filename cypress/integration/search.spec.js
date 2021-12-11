@@ -84,4 +84,28 @@ describe('Search', () => {
       });
     });
   });
+
+  [
+    {
+      name: 'Douglas Adams',
+      books: [
+        "The Hitchhiker's Guide to the Galaxy",
+        'So Long, and Thanks for All the Fish',
+      ],
+    },
+    {
+      name: 'James S. A. Corey',
+      books: ['The Expanse', 'Leviathan Falls'],
+    },
+  ].forEach((author) => {
+    author.books.forEach((book) => {
+      it(`Search for "${book}" by "${author.name}"`, () => {
+        cy.get('select').select('inauthor');
+        cy.get('input').type(author.name);
+        cy.contains('button', 'Search').click();
+
+        cy.contains('.card-title', book).should('be.visible');
+      });
+    });
+  });
 });
