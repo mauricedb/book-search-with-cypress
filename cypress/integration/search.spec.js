@@ -93,10 +93,10 @@ describe('Search', () => {
         'So Long, and Thanks for All the Fish',
       ],
     },
-    {
-      name: 'James S. A. Corey',
-      books: ['The Expanse', 'Leviathan Falls'],
-    },
+    // {
+    //   name: 'James S. A. Corey',
+    //   books: ['The Expanse', 'Leviathan Falls'],
+    // },
   ].forEach((author) => {
     author.books.forEach((book) => {
       it(`Search for "${book}" by "${author.name}"`, () => {
