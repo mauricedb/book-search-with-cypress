@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "prettier": "prettier --write {src,public}/**/*.{js,ts,jsx,tsx,css,json,html}",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --record"
+    "cypress:run": "cypress run --record",
+    "cypress:run:azure": "cypress run --config baseUrl=https://book-search.azureedge.net/"
   },
   "eslintConfig": {
     "extends": [
