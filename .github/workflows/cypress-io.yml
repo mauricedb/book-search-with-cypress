@@ -11,9 +11,9 @@ on:
 jobs:
   start:
     runs-on: ubuntu-latest
-    # container:
-    #   image: cypress/included:9.1.1
-    #   options: --ipc=host
+    container:
+      image: cypress/included:9.1.1
+      options: --ipc=host
 
     steps:
       - name: Checkout Code

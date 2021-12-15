@@ -25,3 +25,5 @@ yarn-error.log*
 .presentation-buddy
 
 cypress/videos
+
+.secrets
