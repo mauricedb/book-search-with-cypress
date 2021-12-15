@@ -102,7 +102,9 @@ describe('Search', () => {
       it(`Search for "${book}" by "${author.name}"`, () => {
         cy.searchForAuthor(author.name);
 
-        cy.contains('.card-title', book).should('be.visible');
+        cy.contains('.card-title', book)
+          .should('be.visible')
+          .checkSearchResultImage(book);
       });
     });
   });

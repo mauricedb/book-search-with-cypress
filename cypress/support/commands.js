@@ -29,3 +29,16 @@ Cypress.Commands.add('searchForAuthor', (author) => {
   cy.get('input').clear().type(author);
   cy.contains('button', 'Search').click();
 });
+
+Cypress.Commands.add(
+  'checkSearchResultImage',
+  { prevSubject: 'element' },
+  (subject, title) => {
+    return cy
+      .wrap(subject)
+      .parents('.card')
+      .find('.card-img')
+      .should('be.visible')
+      .should('have.attr', 'alt', title);
+  }
+);
