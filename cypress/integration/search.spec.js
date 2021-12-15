@@ -89,7 +89,7 @@ describe('Search', () => {
     {
       name: 'Douglas Adams',
       books: [
-        "The Hitchhiker's Guide to the Galaxy",
+        /The Hitchhiker's Guide to the Galaxy/,
         'So Long, and Thanks for All the Fish',
       ],
     },
