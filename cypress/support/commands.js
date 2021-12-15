@@ -39,6 +39,10 @@ Cypress.Commands.add(
       .parents('.card')
       .find('.card-img')
       .should('be.visible')
-      .should('have.attr', 'alt', title);
+      .should(
+        'have.attr',
+        'alt',
+        title instanceof RegExp ? title.source : title
+      );
   }
 );
