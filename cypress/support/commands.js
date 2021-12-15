@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('searchForAuthor', (author) => {
+  cy.get('select').select('inauthor');
+  cy.get('input').clear().type(author);
+  cy.contains('button', 'Search').click();
+});

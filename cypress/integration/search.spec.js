@@ -100,9 +100,7 @@ describe('Search', () => {
   ].forEach((author) => {
     author.books.forEach((book) => {
       it(`Search for "${book}" by "${author.name}"`, () => {
-        cy.get('select').select('inauthor');
-        cy.get('input').type(author.name);
-        cy.contains('button', 'Search').click();
+        cy.searchForAuthor(author.name);
 
         cy.contains('.card-title', book).should('be.visible');
       });
