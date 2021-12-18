@@ -105,6 +105,8 @@ describe('Search', () => {
         cy.contains('.card-title', book)
           .should('be.visible')
           .checkSearchResultImage(book);
+
+        cy.checkSearchResultImage(book).should('have.attr', 'src');
       });
     });
   });

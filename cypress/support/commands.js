@@ -32,10 +32,9 @@ Cypress.Commands.add('searchForAuthor', (author) => {
 
 Cypress.Commands.add(
   'checkSearchResultImage',
-  { prevSubject: 'element' },
+  { prevSubject: ['element', 'optional'] },
   (subject, title) => {
-    return cy
-      .wrap(subject)
+    return (subject ? cy.wrap(subject) : cy.contains('.card-title', title))
       .parents('.card')
       .find('.card-img')
       .should('be.visible')
