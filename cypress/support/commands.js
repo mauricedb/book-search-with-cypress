@@ -25,18 +25,35 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('searchForAuthor', (author) => {
-  cy.get('select').select('inauthor');
-  cy.get('input').clear().type(author);
-  cy.contains('button', 'Search').click();
+  Cypress.log({
+    name: 'searchForAuthor',
+    message: author,
+  });
+
+  cy.get('select', { log: false }).select('inauthor', { log: false });
+  cy.get('input', { log: false })
+    .clear({ log: false })
+    .type(author, { log: false });
+  cy.contains('button', 'Search', { log: false }).click({ log: false });
 });
 
 Cypress.Commands.add(
   'checkSearchResultImage',
   { prevSubject: ['element', 'optional'] },
   (subject, title) => {
-    return (subject ? cy.wrap(subject) : cy.contains('.card-title', title))
-      .parents('.card')
-      .find('.card-img')
+    Cypress.log({
+      name: 'checkSearchResultImage',
+      message: title,
+      type: subject ? 'child' : 'parent',
+    });
+
+    return (
+      subject
+        ? cy.wrap(subject, { log: false })
+        : cy.contains('.card-title', title, { log: false })
+    )
+      .parents('.card', { log: false })
+      .find('.card-img', { log: false })
       .should('be.visible')
       .should('have.attr', 'alt', title);
   }
