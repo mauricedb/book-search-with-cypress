@@ -25,10 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('searchForAuthor', (author) => {
-  Cypress.log({
-    name: 'searchForAuthor',
-    message: author,
-  });
+  Cypress.log();
 
   cy.get('select', { log: false }).select('inauthor', { log: false });
   cy.get('input', { log: false })
@@ -41,10 +38,14 @@ Cypress.Commands.add(
   'checkSearchResultImage',
   { prevSubject: ['element', 'optional'] },
   (subject, title) => {
+    const props = {
+      title,
+      subject,
+    };
+
     Cypress.log({
-      name: 'checkSearchResultImage',
-      message: title,
       type: subject ? 'child' : 'parent',
+      consoleProps: () => props,
     });
 
     return (
@@ -54,6 +55,10 @@ Cypress.Commands.add(
     )
       .parents('.card', { log: false })
       .find('.card-img', { log: false })
+      .then((el) => {
+        props.yielded = el.toArray();
+        return el;
+      })
       .should('be.visible')
       .should('have.attr', 'alt', title);
   }
