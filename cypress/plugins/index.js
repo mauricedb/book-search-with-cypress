@@ -13,7 +13,7 @@
 // the project's config changing)
 
 import { resolve } from 'path';
-import { readFile, access } from 'fs/promises';
+import fs from 'fs';
 
 /**
  * @type {Cypress.PluginConfig}
@@ -31,9 +31,9 @@ module.exports = (on, config) => {
       const fullPath = resolve(filePath);
 
       try {
-        await access(fullPath);
+        await fs.promises.access(fullPath);
 
-        const data = await readFile(fullPath, 'utf8');
+        const data = await fs.promises.readFile(fullPath, 'utf8');
         return JSON.parse(data);
       } catch (err) {}
 
