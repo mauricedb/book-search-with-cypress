@@ -12,6 +12,9 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+import { resolve } from 'path';
+import { readFile, access } from 'fs/promises';
+
 /**
  * @type {Cypress.PluginConfig}
  */
@@ -19,4 +22,22 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+  on('task', {
+    log(message) {
+      console.log(`\u001B[31m${message}\u001B[39m`);
+      return null;
+    },
+    async readFileOrDefault({ filePath, defaultValue = null }) {
+      const fullPath = resolve(filePath);
+
+      try {
+        await access(fullPath);
+
+        const data = await readFile(fullPath, 'utf8');
+        return JSON.parse(data);
+      } catch (err) {}
+
+      return defaultValue;
+    },
+  });
+};

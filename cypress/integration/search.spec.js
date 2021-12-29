@@ -110,4 +110,21 @@ describe('Search', () => {
       });
     });
   });
+
+  it('use a task', () => {
+    cy.log('==> Log this message in Cypress. <==');
+    cy.task('log', '==> Log this message in the Node console. <==');
+
+    cy.readFile('cypress/fixtures/example.json').then(cy.log);
+    // cy.readFile('not-there.json').then(cy.log);
+
+    cy.task('readFileOrDefault', {
+      filePath: 'cypress/fixtures/example.json',
+    }).then(cy.log);
+
+    cy.task('readFileOrDefault', {
+      filePath: 'not-there.json',
+      defaultValue: { notFound: true },
+    }).then(cy.log);
+  });
 });
