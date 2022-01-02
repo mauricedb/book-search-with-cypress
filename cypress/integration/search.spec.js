@@ -118,13 +118,7 @@ describe('Search', () => {
     cy.readFile('cypress/fixtures/example.json').then(cy.log);
     // cy.readFile('not-there.json').then(cy.log);
 
-    cy.task('readFileOrDefault', {
-      filePath: 'cypress/fixtures/example.json',
-    }).then(cy.log);
-
-    cy.task('readFileOrDefault', {
-      filePath: 'not-there.json',
-      defaultValue: { notFound: true },
-    }).then(cy.log);
+    cy.readFileOrDefault('cypress/fixtures/example.json').then(cy.log);
+    cy.readFileOrDefault('not-there.json', { notFound: true }).then(cy.log);
   });
 });

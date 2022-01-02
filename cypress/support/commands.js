@@ -63,3 +63,16 @@ Cypress.Commands.add(
       .should('have.attr', 'alt', title);
   }
 );
+
+Cypress.Commands.add('readFileOrDefault', (filePath, defaultValue) => {
+  Cypress.log();
+
+  return cy.task(
+    'readFileOrDefault',
+    {
+      filePath,
+      defaultValue,
+    },
+    { log: false }
+  );
+});
