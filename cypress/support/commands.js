@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+// Cypress Testing Library extends Cypress's cy commands
+import '@testing-library/cypress/add-commands';
+
 Cypress.Commands.add('searchForAuthor', (author) => {
   Cypress.log();
 
