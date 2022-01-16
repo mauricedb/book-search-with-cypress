@@ -10,7 +10,7 @@ const SearchResult: React.FC<Props> = ({ item }) => {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div id={item.id} className="card mb-3">
+    <div className="card mb-3">
       <div className="row no-gutters">
         <div className="col-md-2">
           <img
