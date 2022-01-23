@@ -11,7 +11,7 @@ describe('Search using Cypress Testing Library', () => {
     cy.findByRole('button', { name: 'Search' }).click();
 
     cy.findByRole('heading', {
-      name: "The Hitchhiker's Guide to the Galaxy",
+      name: "The Hitchhiker's Guide to the Galaxy: The Illustrated Edition",
     }).should('be.visible');
   });
 });
