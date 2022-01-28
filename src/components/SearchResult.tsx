@@ -10,7 +10,7 @@ const SearchResult: React.FC<Props> = ({ item }) => {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div className="card mb-3">
+    <article className="card mb-3" aria-label={item.volumeInfo.title}>
       <div className="row no-gutters">
         <div className="col-md-2">
           <img
@@ -71,7 +71,7 @@ const SearchResult: React.FC<Props> = ({ item }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

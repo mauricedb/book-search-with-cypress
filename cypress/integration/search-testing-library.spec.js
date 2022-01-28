@@ -14,4 +14,18 @@ describe('Search using Cypress Testing Library', () => {
       name: "The Hitchhiker's Guide to the Galaxy: The Illustrated Edition",
     }).should('be.visible');
   });
+
+  it('For The Hitchhikers Guide to the Galaxy', () => {
+    cy.findByRole('textbox', { name: 'Query' }).type(
+      'The Hitchhikers Guide to the Galaxy{enter}'
+    );
+
+    const name = 'The Salmon of Doubt';
+    cy.findByRole('article', { name })
+      .findByRole('heading', { name })
+      .should('be.visible');
+    cy.findByRole('article', { name })
+      .findByRole('img', { name })
+      .should('be.visible');
+  });
 });
