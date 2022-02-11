@@ -15,17 +15,36 @@ describe('Search using Cypress Testing Library', () => {
     }).should('be.visible');
   });
 
-  it('For The Hitchhikers Guide to the Galaxy', () => {
-    cy.findByRole('textbox', { name: 'Query' }).type(
-      'The Hitchhikers Guide to the Galaxy{enter}'
-    );
+  describe('For The Hitchhikers Guide to the Galaxy', () => {
+    beforeEach(() => {
+      cy.findByRole('textbox', { name: 'Query' }).type(
+        'The Hitchhikers Guide to the Galaxy{enter}'
+      );
+    });
 
-    const name = 'The Salmon of Doubt';
-    cy.findByRole('article', { name })
-      .findByRole('heading', { name })
-      .should('be.visible');
-    cy.findByRole('article', { name })
-      .findByRole('img', { name })
-      .should('be.visible');
+    it('For The Hitchhikers Guide to the Galaxy', () => {
+      const name = 'The Salmon of Doubt';
+      cy.findByRole('article', { name })
+        .findByRole('heading', { name })
+        .should('be.visible');
+      cy.findByRole('article', { name })
+        .findByRole('img', { name })
+        .should('be.visible');
+    });
+
+    it('For The Hitchhikers Guide to the Galaxy using as(@alias)', () => {
+      const name = 'The Salmon of Doubt';
+      cy.findByRole('article', { name }).as('book');
+      cy.get('@book').findByRole('heading', { name }).should('be.visible');
+      cy.get('@book').findByRole('img', { name }).should('be.visible');
+    });
+
+    it('For The Hitchhikers Guide to the Galaxy using within()', () => {
+      const name = 'The Salmon of Doubt';
+      cy.findByRole('article', { name }).within(() => {
+        cy.findByRole('heading', { name }).should('be.visible');
+        cy.findByRole('img', { name }).should('be.visible');
+      });
+    });
   });
 });
