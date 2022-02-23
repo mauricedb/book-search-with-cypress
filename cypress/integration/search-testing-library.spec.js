@@ -5,7 +5,7 @@ describe('Search using Cypress Testing Library', () => {
     cy.visit('/');
   });
 
-  it('For books by Douglas Adams', () => {
+  it.only('For books by Douglas Adams', () => {
     cy.findByRole('textbox', { name: 'Query' }).type('Douglas Adams');
     cy.findByRole('combobox', { name: 'Search where' }).select('inauthor');
     cy.findByRole('button', { name: 'Search' }).click();
@@ -13,6 +13,10 @@ describe('Search using Cypress Testing Library', () => {
     cy.findByRole('heading', {
       name: "The Hitchhiker's Guide to the Galaxy: The Illustrated Edition",
     }).should('be.visible');
+
+    cy.findByRole('button', {
+      name: "The Hitchhiker's Guide to the Galaxy: The Illustrated Edition",
+    }).should('not.exist');
   });
 
   describe('For The Hitchhikers Guide to the Galaxy', () => {
